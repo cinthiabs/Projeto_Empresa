@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProjetoEmpresa.Models.Empresa>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Cadastrar Empresa</h2>
+
+<p>
+    <a asp-action="Create">Cadastrar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.uf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomeFantasia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cnpj)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.uf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeFantasia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cnpj)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.empresaId" class="btn btn-info">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.empresaId" class="btn btn-warning">Detalhes</a> |
+                <a asp-action="Delete" asp-route-id="@item.empresaId" class="btn btn-danger">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

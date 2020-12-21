@@ -1,0 +1,39 @@
+﻿@model ProjetoEmpresa.Models.Empresa
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Deletar</h2>
+
+<h3>Tem certeza que deseja deletar esse item?</h3>
+<div>
+    <h4>Empresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.uf)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.uf)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeFantasia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nomeFantasia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cnpj)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cnpj)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="empresaId" />
+        <input type="submit" value="Deletar" class="btn btn-primary" /> |
+        <a asp-action="Index">Voltar</a>
+    </form>
+</div>

@@ -1,0 +1,36 @@
+﻿@model ProjetoEmpresa.Models.Empresa
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Empresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.uf)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.uf)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeFantasia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.nomeFantasia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.cnpj)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.cnpj)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.empresaId">Editar</a> |
+    <a asp-action="Index">Voltar</a>
+</div>
